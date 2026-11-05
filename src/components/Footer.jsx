@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import './Footer.css';
+import Information from './Information';
 
 function Footer() {
   const informations = [
@@ -40,44 +41,52 @@ function Footer() {
 
           
 
+
 <div className="footer-social">
-  <img
-    src="/images/facebook.svg"
-    alt="Facebook"
-    title="Facebook"
-  />
+  <a
+    href="https://www.facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <img src="/images/facebook.svg" alt="Facebook" />
+  </a>
 
-  <img
-    src="/images/instagram.svg"
-    alt="Instagram"
-    title="Instagram"
-  />
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <img src="/images/instagram.svg" alt="Instagram" />
+  </a>
 
-  <img
-    src="/images/twitter.svg"
-    alt="Twitter"
-    title="Twitter"
-  />
+  <a
+    href="https://x.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X (Twitter)"
+  >
+    <img src="/images/twitter.svg" alt="Twitter" />
+  </a>
 </div>
+
 
 
         </div>
 
-        {informations.map((group) => (
-          <div className="footer-column" key={group.title}>
-            <h3>{group.title}</h3>
+        
+{informations.map((group) => (
+  <Information
+    key={group.title}
+    title={group.title}
+    informations={group.links.map((item) => ({
+      text: item.text,
+      link: item.href
+    }))}
+  />
+))}
 
-            <ul>
-              {group.links.map((link) => (
-                <li key={link.text}>
-                  <Link to={link.href}>
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
 
         <div className="footer-contact">
           <h3>Contato</h3>

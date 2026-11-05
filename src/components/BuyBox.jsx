@@ -5,6 +5,9 @@ import { useState } from 'react';
 function BuyBox({ product }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
+  const hasDiscount =
+  product.priceDiscount != null &&
+  product.priceDiscount < product.price;
   const formatPrice = (value) => {
     return value.toLocaleString('pt-BR', {
       style: 'currency',
@@ -28,15 +31,21 @@ function BuyBox({ product }) {
 
       <p className="buy-box-label">Preço do produto:</p>
 
-      <div className="buy-box-prices">
-        <span className="buy-box-old-price">
-          {formatPrice(product.price)}
-        </span>
+      
+<div className="buy-box-prices">
+  {hasDiscount && (
+    <span className="buy-box-old-price">
+      {formatPrice(product.price)}
+    </span>
+  )}
 
-        <strong className="buy-box-new-price">
-          {formatPrice(product.priceDiscount)}
-        </strong>
-      </div>
+  <strong className="buy-box-new-price">
+    {formatPrice(
+      hasDiscount ? product.priceDiscount : product.price
+    )}
+  </strong>
+</div>
+
 
       <h3>Descrição do produto</h3>
 

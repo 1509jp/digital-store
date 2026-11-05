@@ -10,6 +10,7 @@ import productThumb2 from '../assets/product-thumb-2.jpeg';
 import productThumb3 from '../assets/product-thumb-3.jpeg';
 import productThumb4 from '../assets/product-thumb-4.jpeg';
 import productThumb5 from '../assets/product-thumb-5.jpeg';
+import Section from '../components/Section';
 
 function ProductViewPage() {
   const { id } = useParams();
@@ -71,24 +72,31 @@ const images = [
         </p>
 
         <div className="product-view-content">
-          <Gallery images={images} />
+          
+<Gallery
+  images={images}
+  showThumbs={true}
+/>
 
           <BuyBox product={product} />
         </div>
 
-        {relatedProducts.length > 0 && (
+        
+{relatedProducts.length > 0 && (
   <section className="related-products">
-    <div className="related-products-header">
-      <h2>Produtos relacionados</h2>
-
-      <Link to="/products">
-        Ver todos →
-      </Link>
-    </div>
-
-    <ProductListing products={relatedProducts} />
+    <Section
+      title="Produtos recomendados"
+      titleAlign="left"
+      link={{
+        text: 'Ver todos',
+        href: '/products'
+      }}
+    >
+      <ProductListing products={relatedProducts} />
+    </Section>
   </section>
 )}
+
       </div>
     </main>
   );

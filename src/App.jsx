@@ -39,6 +39,17 @@ function App() {
             </Layout>
           }
         />
+        <Route
+  path="/orders"
+  element={
+    <Layout>
+      <main style={{ padding: '80px 20px', textAlign: 'center' }}>
+        <h1>Meus Pedidos</h1>
+        <p>Funcionalidade demonstrativa, ainda não disponível.</p>
+      </main>
+    </Layout>
+  }
+/>
       </Routes>
     </BrowserRouter>
   );

@@ -2,12 +2,21 @@
 import { useState } from 'react';
 import './Gallery.css';
 
+
 function Gallery({
   images = [],
   mode = 'product',
-  showThumbnails = true,
+  showThumbnails,
+  showThumbs = false,
+  width,
+  height,
+  radius,
+  className = '',
   onSlideChange,
 }) {
+
+const shouldShowThumbnails = showThumbnails ?? showThumbs;
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (images.length === 0) {
@@ -54,7 +63,16 @@ const currentImageStyle = !isBanner
   };
 
   return (
-    <div className={`gallery ${isBanner ? 'gallery-banner' : ''}`}>
+    
+<div
+  className={`gallery ${isBanner ? 'gallery-banner' : ''} ${className}`}
+  style={{
+    width: width ?? undefined,
+    height: height ?? undefined,
+    borderRadius: radius ?? undefined,
+  }}
+>
+
       <div className="gallery-main">
         {hasMultipleImages && (
           <button
@@ -97,7 +115,7 @@ const currentImageStyle = !isBanner
         )}
       </div>
 
-      {hasMultipleImages && showThumbnails && (
+      {hasMultipleImages && shouldShowThumbnails && (
         <div className="gallery-thumbnails">
           {images.map((image, index) => (
             <button

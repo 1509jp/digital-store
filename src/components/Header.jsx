@@ -88,7 +88,7 @@ const isCategoryPage =
   Categorias
 </NavLink>
 
-  <span className="header-nav-placeholder">Meus Pedidos</span>
+  <NavLink to="/orders">Meus Pedidos</NavLink>
 </nav>
 
       </div>
