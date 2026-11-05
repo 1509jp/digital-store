@@ -1,0 +1,109 @@
+
+.buy-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.buy-box h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1f1f1f;
+  margin: 0;
+}
+
+.buy-box-reference {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+.buy-box-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.buy-box-rating span:first-child {
+  color: #f6aa1c;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.buy-box-rating span:last-child {
+  color: #8f8f8f;
+  font-size: 14px;
+}
+
+.buy-box-label {
+  font-size: 14px;
+  color: #666666;
+  margin: 8px 0 0;
+}
+
+.buy-box-prices {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.buy-box-old-price {
+  color: #8f8f8f;
+  text-decoration: line-through;
+  font-size: 18px;
+}
+
+.buy-box-new-price {
+  color: #1f1f1f;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.buy-box h3 {
+  color: #474747;
+  font-size: 16px;
+  margin: 12px 0 0;
+}
+
+.buy-box-description {
+  color: #474747;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.buy-box-button {
+  width: 220px;
+  max-width: 100%;
+  min-height: 48px;
+  background-color: #f6aa1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.buy-box-button:hover {
+  background-color: #df950f;
+}
+
+@media (max-width: 768px) {
+  .buy-box h1 {
+    font-size: 26px;
+  }
+
+  .buy-box-new-price {
+    font-size: 28px;
+  }
+
+  .buy-box-button {
+    width: 100%;
+  }
+}

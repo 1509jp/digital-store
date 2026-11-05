@@ -1,0 +1,45 @@
+
+.product-options {
+  margin-top: 16px;
+}
+
+.product-options h3 {
+  font-size: 14px;
+  color: #474747;
+  margin-bottom: 12px;
+}
+
+.product-options-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.product-option {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #474747;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.product-option.square {
+  border-radius: 4px;
+}
+
+.product-option.circle {
+  border-radius: 50%;
+}
+
+.product-option.selected {
+  border: 3px solid #c92071;
+  outline: 2px solid #ffffff;
+  box-shadow: 0 0 0 4px #c92071;
+}
+
+.product-option:hover {
+  border-color: #c92071;
+}
