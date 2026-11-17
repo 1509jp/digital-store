@@ -124,13 +124,13 @@ function ProductListingPage() {
     className="mobile-filter-button"
     onClick={() => setShowFilters(!showFilters)}
     aria-expanded={showFilters}
-    aria-controls="products-filter-panel"
+    aria-controls="categorias"
   >
     {showFilters ? '✕ Fechar filtros' : '☰ Filtrar produtos'}
   </button>
 
   <aside
-    id="products-filter-panel"
+    id="categorias"
     className={`products-sidebar ${showFilters ? 'filters-open' : ''}`}
   >
             <div className="products-sidebar-header">

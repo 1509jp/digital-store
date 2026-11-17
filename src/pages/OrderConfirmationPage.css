@@ -1,0 +1,139 @@
+﻿.order-confirmation-page {
+  background: #f9f8fe;
+  min-height: 75vh;
+  padding: 50px 20px 80px;
+}
+
+.order-confirmation-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.order-confirmation-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.order-confirmation-header svg {
+  margin-bottom: 15px;
+}
+
+.order-confirmation-header h1 {
+  color: #1f1f1f;
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+
+.order-confirmation-header p {
+  color: #474747;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.order-confirmation-details {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.order-confirmation-details h2 {
+  color: #474747;
+  font-size: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 24px;
+}
+
+.order-confirmation-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-confirmation-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: #e2e3ff;
+  border-radius: 4px;
+}
+
+.order-confirmation-item > div {
+  flex: 1;
+}
+
+.order-confirmation-item strong {
+  color: #1f1f1f;
+  font-size: 15px;
+}
+
+.order-confirmation-item p {
+  color: #8f8f8f;
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+.order-confirmation-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #474747;
+}
+
+.order-confirmation-total strong {
+  color: #ee4266;
+}
+
+.order-confirmation-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.order-confirmation-actions a {
+  display: inline-block;
+  padding: 16px 35px;
+  background: #f6aa1c;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.order-confirmation-actions a:hover {
+  background: #e99b0c;
+}
+
+@media (max-width: 600px) {
+  .order-confirmation-page {
+    padding: 30px 12px 50px;
+  }
+
+  .order-confirmation-header h1 {
+    font-size: 23px;
+  }
+
+  .order-confirmation-details {
+    padding: 20px;
+  }
+
+  .order-confirmation-item {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .order-confirmation-item img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .order-confirmation-total {
+    font-size: 16px;
+  }
+}

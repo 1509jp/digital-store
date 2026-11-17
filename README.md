@@ -1,51 +1,55 @@
+﻿# Digital Store
 
-# Digital Store 🛍️
+Projeto Front-end de uma loja virtual desenvolvido durante o curso
+Geração Tech — Desenvolvimento Web Full Stack.
 
-Projeto Front-end de uma loja virtual desenvolvido como atividade final do curso **Geração Tech**, com base no projeto de referência da Digital College.
+A aplicação utiliza React, Vite e React Router, seguindo como
+referência visual o projeto Drip Store da Digital College.
 
-A aplicação foi construída utilizando React e Vite, com foco na criação de componentes reutilizáveis, navegação entre páginas, organização do código e responsividade.
-
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - React
 - JavaScript
 - Vite
-- React Router DOM
-- CSS3
-- HTML5
-- Git e GitHub
+- React Router
+- CSS
+- Context API
 
-## 🛒 Funcionalidades
+## Funcionalidades
 
-- Página inicial com banner interativo e coleções em destaque.
-- Listagem de produtos com imagens, preços e descontos.
-- Pesquisa de produtos por nome, marca ou categoria.
-- Filtros de produtos por marca e categoria.
-- Ordenação por menor e maior preço.
-- Página de detalhes de cada produto.
-- Galeria de imagens com visualizações alternativas.
-- Seleção de tamanho e cor dos produtos.
-- Exibição de produtos relacionados.
-- Layout responsivo para computadores e dispositivos móveis.
+- Página inicial com apresentação dos produtos
+- Catálogo de produtos
+- Pesquisa por nome, marca e categoria
+- Filtros por marca e categoria
+- Ordenação por menor e maior preço
+- Página de detalhes dos produtos
+- Seleção de tamanho e cor
+- Carrinho de compras
+- Alteração de quantidade e remoção de produtos
+- Checkout demonstrativo
+- Confirmação de pedido
+- Visualização do último pedido
+- Página de login demonstrativa
+- Página de cadastro demonstrativa
+- Página de categorias com navegação para produtos filtrados
+- Layout responsivo
 
-**Observação:** o botão de compra é demonstrativo. O projeto não possui processamento de pagamentos, autenticação ou integração com um Back-end.
+## Limitações
 
-## 📄 Páginas do projeto
+Este projeto é uma demonstração Front-end.
 
-| Página | Rota |
-|---|---|
-| Página inicial | `/` |
-| Listagem de produtos | `/products` |
-| Detalhes do produto | `/products/:id` |
+- Login e cadastro não criam sessões ou contas reais.
+- O checkout não realiza pagamentos.
+- Os pedidos são mantidos apenas em memória durante a sessão.
+- Ao atualizar a página, os dados do carrinho e do último pedido
+  podem ser perdidos.
+- Não há integração com o Back-end nesta versão.
 
-## 💻 Como executar o projeto
+## Como executar
 
-### Pré-requisitos
-
+Requisitos:
 - Node.js
 - npm
-
-### Instalação
 
 Clone o repositório:
 
@@ -71,15 +75,17 @@ Inicie o servidor de desenvolvimento:
 npm run dev
 ```
 
-Abra no navegador o endereço informado pelo Vite no terminal.
+Abra no navegador o endereço informado pelo Vite.
 
-### Gerar versão de produção
+## Gerar versão de produção
 
 ```bash
 npm run build
 ```
 
-## 📁 Organização do projeto
+Os arquivos de produção serão gerados na pasta `dist`.
+
+## Organização do projeto
 
 ```text
 digital-store/
@@ -87,37 +93,55 @@ digital-store/
 ├── src/
 │   ├── assets/
 │   ├── components/
+│   ├── context/
+│   │   └── CartContext.jsx
 │   ├── data/
 │   │   └── products.js
 │   ├── pages/
 │   │   ├── HomePage.jsx
 │   │   ├── ProductListingPage.jsx
-│   │   └── ProductViewPage.jsx
+│   │   ├── ProductViewPage.jsx
+│   │   ├── CartPage.jsx
+│   │   ├── CheckoutPage.jsx
+│   │   ├── OrderConfirmationPage.jsx
+│   │   ├── OrdersPage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── RegisterPage.jsx
+│   │   └── CategoriesPage.jsx
 │   ├── App.jsx
 │   └── main.jsx
 ├── package.json
 └── README.md
 ```
 
-## 🎨 Referências
+## Referências
 
-O projeto foi desenvolvido com base no modelo visual **Drip Store**, disponibilizado pela Digital College.
+O projeto foi desenvolvido com base no modelo visual
+Drip Store, disponibilizado pela Digital College.
 
-- [Repositório de referência](https://github.com/digitalcollegebr/projeto-digital-store)
-- [Protótipo no Figma](https://www.figma.com/design/nUk0ihM3x4u8JQtxUoAEJf/DRIP-STORE---DIGITAL-COLLEGE--Copy-?node-id=22-30&p=f)
+- Repositório de referência:
+  https://github.com/digitalcollegebr/projeto-digital-store
 
-A interface foi adaptada para fins educacionais. Os produtos e as imagens são utilizados de maneira demonstrativa e podem não corresponder aos modelos comerciais apresentados.
+- Protótipo no Figma:
+  https://www.figma.com/design/nUk0ihM3x4u8JQtxUoAEJf/DRIP-STORE---DIGITAL-COLLEGE--Copy-?node-id=22-30&p=f
 
-## 📚 Objetivo acadêmico
+A interface foi adaptada para fins educacionais.
+Os produtos e as imagens são utilizados de maneira demonstrativa.
 
-Aplicar os conhecimentos adquiridos durante o curso Geração Tech no desenvolvimento de uma aplicação Front-end utilizando React, incluindo componentização, gerenciamento de estado, rotas, estilização e boas práticas de organização.
+## Objetivo acadêmico
 
-## 👨‍💻 Autor
+Aplicar os conhecimentos adquiridos no curso Geração Tech
+no desenvolvimento de uma aplicação Front-end utilizando
+React, componentização, gerenciamento de estado,
+rotas, estilização e organização de código.
+
+## Autor
 
 João Pedro Félix de Oliveira
 
-Projeto desenvolvido para o curso **Geração Tech — Full Stack**.
+Projeto desenvolvido para o curso
+Geração Tech — Desenvolvimento Web Full Stack.
 
-## 🔗 Repositório
+## Repositório
 
 https://github.com/1509jp/digital-store

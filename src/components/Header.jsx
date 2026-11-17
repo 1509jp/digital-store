@@ -7,11 +7,13 @@ import {
 } from 'react-router-dom';
 import { ShoppingCart, Search } from 'lucide-react';
 import Logo from './Logo';
+import { useCart } from '../context/CartContext';
 import './Header.css';
 
 
 function Header() {
   const [search, setSearch] = useState('');
+  const { cartCount } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
 const isCategoryPage =
@@ -49,18 +51,19 @@ const isCategoryPage =
           </form>
           
 <div className="header-actions">
-  <a href="#" className="header-register">
+  <NavLink to="/register" className="header-register">
     Cadastre-se
-  </a>
+  </NavLink>
 
-  <button type="button" className="header-login">
+  <button type="button" className="header-login" onClick={() => navigate("/login")}>
     Entrar
   </button>
 
   
-<span className="header-cart" aria-label="Carrinho de compras">
+<NavLink to="/cart" className="header-cart" aria-label="Carrinho de compras">
   <ShoppingCart size={28} strokeWidth={2} />
-</span>
+  {cartCount > 0 && <span className="header-cart-count">{cartCount}</span>}
+</NavLink>
 
 </div>
 
@@ -80,7 +83,7 @@ const isCategoryPage =
 </NavLink>
 
 <NavLink
-  to="/products?category=all"
+  to="/categories"
   className={({ isActive }) =>
     isActive && isCategoryPage ? 'active' : 'category-link'
   }
@@ -97,3 +100,4 @@ const isCategoryPage =
 }
 
 export default Header;
+

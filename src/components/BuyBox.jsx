@@ -1,8 +1,10 @@
 import './BuyBox.css';
 import ProductOptions from './ProductOptions';
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 
 function BuyBox({ product }) {
+  const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const hasDiscount =
@@ -91,22 +93,8 @@ function BuyBox({ product }) {
       return;
     }
 
-    const sizeText = selectedSize
-      ? `\nTamanho: ${selectedSize}`
-      : '';
-
-    const colorNames = {
-      '#1F1F1F': 'Preto',
-      '#C92071': 'Rosa',
-      '#B5B6F2': 'Lilás',
-      '#FFFFFF': 'Branco'
-    };
-
-    alert(
-      `${product.name} adicionado ao carrinho!` +
-      sizeText +
-      `\nCor: ${colorNames[selectedColor]}`
-    );
+    addToCart(product, selectedSize, selectedColor);
+    alert('Produto adicionado ao carrinho!');
   }}
 >
   COMPRAR
@@ -116,3 +104,4 @@ function BuyBox({ product }) {
 }
 
 export default BuyBox;
+

@@ -1,3 +1,9 @@
+import CategoriesPage from './pages/CategoriesPage';
+import OrdersPage from './pages/OrdersPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
+import CheckoutPage from './pages/CheckoutPage';
 
 import './App.css';
 
@@ -7,6 +13,7 @@ import Layout from './pages/Layout';
 import HomePage from './pages/HomePage';
 import ProductListingPage from './pages/ProductListingPage';
 import ProductViewPage from './pages/ProductViewPage';
+import CartPage from './pages/CartPage';
 
 
 function App() {
@@ -43,16 +50,62 @@ function App() {
   path="/orders"
   element={
     <Layout>
-      <main style={{ padding: '80px 20px', textAlign: 'center' }}>
-        <h1>Meus Pedidos</h1>
-        <p>Funcionalidade demonstrativa, ainda não disponível.</p>
-      </main>
+        <OrdersPage />
+      </Layout>
+  }
+/>
+        <Route
+          path="/cart"
+          element={
+            <Layout>
+              <CartPage />
+            </Layout>
+          }
+        />
+      <Route
+  path="/checkout"
+  element={
+    <Layout>
+      <CheckoutPage />
     </Layout>
   }
 />
-      </Routes>
+<Route
+  path="/order-confirmation"
+  element={
+    <Layout>
+      <OrderConfirmationPage />
+    </Layout>
+  }
+/>
+<Route
+  path="/login"
+  element={
+    <Layout>
+      <LoginPage />
+    </Layout>
+  }
+/>
+<Route
+  path="/register"
+  element={
+    <Layout>
+      <RegisterPage />
+    </Layout>
+  }
+/>
+<Route
+  path="/categories"
+  element={
+    <Layout>
+      <CategoriesPage />
+    </Layout>
+  }
+/>
+</Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
